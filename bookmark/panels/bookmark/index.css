@@ -1,0 +1,55 @@
+:host {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #f90;
+}
+
+.bookmarkWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryTitle {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.categoryTitle span {
+  flex: 50%;
+}
+
+.categoryName {
+  margin-left: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.dirItem {
+  overflow: hidden;
+}
+
+.dirName {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bookmarkBtns {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.view {
+  flex: 1;
+
+  padding: 10px;
+  padding-top: 0px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}

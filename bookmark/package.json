@@ -1,0 +1,45 @@
+{
+  "name": "custom-panel",
+  "version": "0.0.1",
+  "description": "The package template for getting started.",
+  "author": "Cocos Creator",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/custom-panel/bookmark": {
+      "message": "custom-panel:bookmark"
+    }
+  },
+  "panel.main": {
+    "main": "panels/main-panel/index.js",
+    "type": "dockable",
+    "title": "main-panel",
+    "width": 400,
+    "height": 300
+  },
+  "panel.bookmark": {
+    "main": "panels/bookmark/index.js",
+    "type": "dockable",
+    "title": "bookmark",
+    "width": 400,
+    "height": 300
+  },
+  "panel.right-content": {
+    "main": "panels/right-content/index.js",
+    "type": "dockable",
+    "title": "right-panel",
+    "width": 400,
+    "height": 300
+  },
+  "scripts": {
+    "eslint:check": "eslint . --ext=js; exit 0",
+    "eslint:fix": "eslint . --ext=js --fix; exit 0",
+    "clean": "rm -rf ./node_modules/ && rm -rf yarn.lock"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-plugin-vue": "^5.2.3"
+  }
+}

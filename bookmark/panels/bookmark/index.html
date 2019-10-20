@@ -1,0 +1,37 @@
+<div class="section bookmarkWrap">
+  <h2>书签列表</h2>
+  <ui-input @confirm="inputCategory" placeholder="输入书签分类名" value="{{newCategory}}" clearable></ui-input>
+  <br />
+  <ui-button @confirm="addCategory">添加书签类型</ui-button>
+  <hr />
+  <div class="scroll">
+    <div v-for="(category, dirs) in bookmarkData" :key="index">
+      <ui-section folded :key="category">
+        <div class="header categoryTitle">
+          <span class="categoryName"><strong>{{category}}</strong></span>
+          <span>书签总数: {{dirs.length}}</span>
+        </div>
+        <ui-input id="inputDirName" @confirm="inputDirName" placeholder="输入书签名" value="{{newDirName}}" clearable>
+        </ui-input>
+        <ui-button @confirm="addDir" data-category="{{category}}">添加目录</ui-button>
+        <hr v-if="dirs.length > 0"/>
+        <div v-for="dir in dirs" :key="dir.name">
+          <div class="dirItem">
+            <span class="dirName">{{dir.name}}</span>
+            <br />
+            {{dir.path}}
+            <br />
+            <div class="bookmarkBtns">
+              <ui-button class="blue" @confirm="openDir" data-openpath="{{dir.path}}">打开书签</ui-button>
+              <ui-button class="red" @confirm="delDir" data-category="{{category}}" data-delname="{{dir.name}}">移除书签
+              </ui-button>
+            </div>
+            <hr />
+          </div>
+        </div>
+        <hr v-if="dirs.length > 0"/>
+        <ui-button class="red" @confirm="delCategory" data-category="{{category}}">删除分类</ui-button>
+      </ui-section>
+    </div>
+  </div>
+</div>

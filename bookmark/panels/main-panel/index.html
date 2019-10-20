@@ -1,0 +1,9 @@
+<h2>MainPanel</h2>
+<hr />
+data: <div id="data">{{num}}</div>
+<hr />
+<ui-input @change="onUpdateNum" ref="inputNum" v-value="{{num}}"></ui-input>
+<ui-button @confirm="onResetLayout">重置布局</ui-button>
+<ui-button @confirm="onSendToLeftPanel">to right panel</ui-button>
+<br />
+<hr />
