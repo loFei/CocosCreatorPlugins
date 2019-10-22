@@ -156,10 +156,10 @@ Editor.Panel.extend({
             type: 'info',
             title: '提示',
             message: msg,
-            buttons: ['确认','取消']
+            buttons: ['取消', '确认']
           }, index=>{
             // console.log(`【你点击了${index ? '取消' : '确定'}！！】`)
-            if (index == 0) {
+            if (index == 1) {
               delete this.bookmarkData[category];
               this.bookmarkData = JSON.parse(JSON.stringify(this.bookmarkData));
               Fs.writeFileSync(configPath, JSON.stringify(this.bookmarkData));
